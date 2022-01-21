@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { Accordion, Card, useAccordionButton } from "react-bootstrap";
-
 import NavChat from "./NavChat";
-import Person from "./PersonMessage";
+import PersonMessage from "./PersonMessage";
 import "./styles.scss";
-function CustomToggle({ children, eventKey }) {
+function CustomToggle({ eventKey }) {
   const [show, setShow] = useState(false);
   const decoratedOnClick = useAccordionButton(eventKey, () => setShow(!show));
 
@@ -21,7 +20,7 @@ export default function Chat() {
           </Card.Header>
           <Accordion.Collapse eventKey="0">
             <Card.Body>
-              <Person name="احمد" date="10/10/2020" />
+              <PersonMessage name="احمد" date="10/10/2020" />
             </Card.Body>
           </Accordion.Collapse>
         </Card>

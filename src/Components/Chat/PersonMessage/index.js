@@ -1,6 +1,6 @@
 import  "./styles.scss";
 
-const Person = ({ img, name, date }) => {
+const PersonMessage = ({ img, name, date }) => {
   return (
     <div className="personal_message_container">
       <div className="info">
@@ -18,4 +18,4 @@ const Person = ({ img, name, date }) => {
   );
 };
 
-export default Person;
+export default PersonMessage;
