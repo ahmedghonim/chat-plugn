@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    z-index: 999999;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+  
+    .text {
+        cursor: pointer;
+    }
+    .icons {
+        display: flex;
+        gap: 20px;
+        font-size: 20px;
+        cursor: pointer;
+        .arrow {
+            cursor: pointer;
+        }
+    }
+}

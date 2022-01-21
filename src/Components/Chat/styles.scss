@@ -1,0 +1,23 @@
+@import '../../config.scss';
+
+.nav {
+    position: fixed;
+    bottom: 0px;
+    left: 30px;
+    .accordion {
+        width: 350px;
+        .card-header{
+            background-color: $primary;
+        }
+        .card-body{
+           background-color: $primary;
+
+       }
+    }
+
+    .button {
+        position: fixed;
+        top: 0;
+        z-index: 99;
+    }
+}

@@ -1,0 +1,41 @@
+@import "../../../config.scss";
+
+.modal-content {
+    background-color: $primary !important;
+
+    .modal-header {
+        width: 100%;
+        .modal_header_container {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            .modal_header_close {
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+                gap: 10px;
+            }
+        }
+        .modal_search_container {
+            color: blue;
+            padding-bottom: 5px;
+          
+            .col {
+               
+                input {
+                    color: white;
+                    border: hidden;
+                    background-color: inherit;
+                    width: 100%;
+                    &:focus {
+                        outline: none !important;
+                    }
+                }
+            }
+        }
+
+        
+    }
+}
