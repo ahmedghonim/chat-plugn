@@ -1,4 +1,4 @@
-@import '../../config.scss';
+@import "../../config.scss";
 
 .nav {
     position: fixed;
@@ -6,18 +6,20 @@
     left: 30px;
     .accordion {
         width: 350px;
-        .card-header{
+        .card-header {
             background-color: $primary;
         }
-        .card-body{
-           background-color: $primary;
-
-       }
+        .card-body {
+            background-color: $primary;
+        }
     }
-
-    .button {
-        position: fixed;
-        top: 0;
-        z-index: 99;
+}
+@media (max-width: $sm) {
+    .nav {
+        left: 0;
+        right: 0;
+        .accordion {
+            width: 100%;
+        }
     }
 }

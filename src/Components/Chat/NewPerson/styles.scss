@@ -1,14 +1,21 @@
 @import "../../../config.scss";
 .new_personal_message_container {
     display: flex;
-    color: white; 
+    color: white;
     align-items: flex-end;
- .follow{
-     margin-right: 10px;
+    margin-bottom: 10px;
+    .follow {
+        margin-right: 10px;
+        margin-bottom: 5px;
+        display: flex;
+        flex-direction: column;
+        h5 {
+            margin: 10px 0 0px 0;
+        }
     }
     .img-info {
         display: flex;
-        flex-direction: column;  
+        flex-direction: column;
         .img {
             background-color: $gray;
             width: 60px;
@@ -18,7 +25,7 @@
             justify-content: center;
             align-items: center;
         }
-        .icon{
+        .icon {
             align-self: flex-end;
         }
     }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Accordion, Button, Card, useAccordionButton } from "react-bootstrap";
+import { Accordion, Card, useAccordionButton } from "react-bootstrap";
 
 import NavChat from "./NavChat";
 import Person from "./PersonMessage";
