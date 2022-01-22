@@ -41,7 +41,7 @@ function MyVerticallyCenteredModal(props) {
         </Row>
       </Modal.Header>
       <Modal.Body className="modal_body_container">
-        <NewPerson name='احمد' subName="غنيم"/>
+        <NewPerson  name='احمد' subName="غنيم"/>
         <NewPerson name='احمد' subName="@testt"/>
         <NewPerson name='احمد' subName="@testt"/>
         <NewPerson name='احمد' subName="@testt"/>

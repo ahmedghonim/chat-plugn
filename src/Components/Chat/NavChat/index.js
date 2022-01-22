@@ -6,7 +6,7 @@ import { Button } from "react-bootstrap";
 import { NavStateContext } from "../Context";
 import { MdOutlineKeyboardBackspace } from "react-icons/md";
 
-const NavChat = ({ show, decoratedOnClick }) => {
+const NavChat = ({ arrowState, decoratedOnClick }) => {
   const { showMessages, setShowMessages } = useContext(NavStateContext);
 
   return (
@@ -25,7 +25,7 @@ const NavChat = ({ show, decoratedOnClick }) => {
               onClick={decoratedOnClick}
               className={Styles["arrow"]}
             >
-              {!show ? <IoIosArrowUp /> : <IoIosArrowDown />}
+              {!arrowState ? <IoIosArrowUp /> : <IoIosArrowDown />}
             </Button>
           </>
         ) : (

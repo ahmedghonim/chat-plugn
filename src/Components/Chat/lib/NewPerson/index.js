@@ -3,10 +3,17 @@ import { BsFillPersonFill } from "react-icons/bs";
 import { useContext } from "react";
 import { NavStateContext } from "../../Context";
 const NewPerson = ({ img, name, subName, isFollow = true }) => {
-  const { setShowMessages } = useContext(NavStateContext);
+  const { setShowMessages, setShowMassageWindow } =
+    useContext(NavStateContext);
 
   return (
-    <div onClick={()=>setShowMessages(true)} className="new_personal_message_container ">
+    <div
+      onClick={() => {
+        setShowMessages(true);
+        setShowMassageWindow(true);
+      }}
+      className="new_personal_message_container "
+    >
       <div className="img-info ">
         <BsFillPersonFill className="icon" />
 

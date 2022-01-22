@@ -1,15 +1,26 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Accordion, Card, useAccordionButton } from "react-bootstrap";
 import BoydChat from "./BodyChat";
-import { NavStateProvider } from "./Context";
+import { NavStateContext, NavStateProvider } from "./Context";
 import NavChat from "./NavChat";
 import "./styles.scss";
-function CustomToggle({ eventKey }) {
-  const [show, setShow] = useState(false);
-  const decoratedOnClick = useAccordionButton(eventKey, () => setShow(!show));
 
-  return <NavChat show={show} decoratedOnClick={decoratedOnClick} />;
+function CustomToggle({ eventKey }) {
+  const { showMassageWindow, setShowMassageWindow } =
+    useContext(NavStateContext);
+  const [arrowState, setArrowState] = useState(false);
+  const decoratedOnClick = useAccordionButton(eventKey, () => setArrowState(!arrowState));
+
+  useEffect(() => {
+    if (showMassageWindow && !arrowState) {
+      decoratedOnClick();
+      setShowMassageWindow(false);
+    }
+  }, [showMassageWindow, arrowState]);
+
+  return <NavChat arrowState={arrowState} decoratedOnClick={decoratedOnClick} />;
 }
+
 export default function Chat() {
   return (
     <NavStateProvider>
