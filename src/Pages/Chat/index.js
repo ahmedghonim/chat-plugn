@@ -1,5 +1,5 @@
 import "./styles.scss";
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Button, Col, Row } from "react-bootstrap";
 import SMC from "../../Components/Chat/lib/SMC";
 import { NavStateProvider } from "../../Components/Chat/Context";
@@ -124,7 +124,6 @@ function Chat() {
         { req: "", res: "رساله جديده من المرسل من فرد " },
       ],
     },
-   
   ];
   return (
     <NavStateProvider>
@@ -132,7 +131,9 @@ function Chat() {
         <Col
           md={4}
           className={
-            toggleWindow ? "sm-disable chat-page_persons bg-black mt-4 ps-3" : "chat-page_persons bg-black mt-4 ps-3"
+            toggleWindow
+              ? "sm-disable chat-page_persons bg-black mt-4 ps-3"
+              : "chat-page_persons bg-black mt-4 ps-3"
           }
         >
           {data.map(({ name, date, id }, index) => (
@@ -147,17 +148,30 @@ function Chat() {
             />
           ))}
         </Col>
-        <Col md={8} className={!toggleWindow ? "sm-disable chat-page_message":"chat-page_message"}>
-          <div className="d-flex justify-content-between align-items-baseline mt-3">
-            <PersonMessage name={currantMessages ? currantMessages.name : ""} />
-            <ModelMessages/>
-            <Button
-              variant="outline-light"
-              onClick={() => setToggleWindow(false)}
-            >
-              <MdOutlineKeyboardBackspace />
-            </Button>
-          </div>
+        <Col
+          md={8}
+          className={
+            !toggleWindow ? "sm-disable chat-page_message" : "chat-page_message"
+          }
+        >
+          <Row className="mt-3 ">
+            <Col className="justify-content-center">
+              <PersonMessage
+                name={currantMessages ? currantMessages.name : ""}
+              />
+            </Col>
+            <Col  className="d-flex align-items-baseline justify-content-center">
+              <ModelMessages />
+            </Col>
+            <Col   className="d-flex align-items-baseline justify-content-end">
+              <Button
+                variant="outline-light"
+                onClick={() => setToggleWindow(false)}
+              >
+                <MdOutlineKeyboardBackspace />
+              </Button>
+            </Col>
+          </Row>
           <SMC data={currantMessages} />
         </Col>
       </Row>

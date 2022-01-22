@@ -1,6 +1,5 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import SMC from "../lib/SMC";
-import Style from "./styles.module.scss";
 import PersonMessage from "../lib/PersonMessage";
 import { NavStateContext } from "../Context";
 
