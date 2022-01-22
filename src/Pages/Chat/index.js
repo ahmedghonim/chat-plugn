@@ -152,7 +152,7 @@ function Chat() {
           ))}
         </Col>
         <Col md={8} className="chat-page_message py-2">
-          {/* <PersonMessage name="Ahmed" /> */}
+          <PersonMessage name={currantMessages?currantMessages.name:""} />
           <SMC data={currantMessages} />
         </Col>
       </Row>
