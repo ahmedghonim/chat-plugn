@@ -7,7 +7,7 @@
         display: flex;
         align-items: center;
         justify-content: left;
-        
+        margin-left: 5px;
         .text_container{
             background-color: $skyBlue;
             margin-left: 5px;
@@ -29,7 +29,14 @@
         display: flex;
         align-items: center;
         justify-content: right;
-        
+        position: relative;
+        margin-right: 15px;
+        .text_icon{
+            color: $skyBlue;
+            position: absolute;
+            bottom: -5px;
+            right: -15px;
+        }
         .text_container{
             background-color: $gray;
             margin-left: 5px;
