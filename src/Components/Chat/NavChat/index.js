@@ -6,13 +6,14 @@ import { Button } from "react-bootstrap";
 import { NavStateContext } from "../Context";
 import { MdOutlineKeyboardBackspace } from "react-icons/md";
 
-const NavChat = ({name,arrowState, decoratedOnClick }) => {
-  const { showMessages, setShowMessages } = useContext(NavStateContext);
-
+const NavChat = ({ arrowState, decoratedOnClick }) => {
+  const { showMessages, setShowMessages, currantMessages } =
+    useContext(NavStateContext);
+  const { name } = currantMessages;
   return (
     <div className={Styles["container"]}>
       <div onClick={decoratedOnClick} className={Styles["text"]}>
-      {!showMessages ? <span>الرسائل</span> : <span>{name}</span>}
+        {!showMessages ? <span>الرسائل</span> : <span>{name}</span>}
       </div>
 
       <div className={Styles["icons"]}>
@@ -32,10 +33,10 @@ const NavChat = ({name,arrowState, decoratedOnClick }) => {
         ) : (
           <Button
             variant="outline-light"
-            onClick={()=>setShowMessages(!showMessages)}
+            onClick={() => setShowMessages(!showMessages)}
             className={Styles["arrow"]}
           >
-           <MdOutlineKeyboardBackspace />  
+            <MdOutlineKeyboardBackspace />
           </Button>
         )}
       </div>

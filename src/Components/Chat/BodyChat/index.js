@@ -1,22 +1,26 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import SMC from "../lib/SMC";
 import Style from "./styles.module.scss";
 import PersonMessage from "../lib/PersonMessage";
 import { NavStateContext } from "../Context";
 
-const BoydChat = () => {
-  const { showMessages } = useContext(NavStateContext);
+const BoydChat = ({ data }) => {
+  const { showMessages, currantMessages, setCurrantMessages } =
+    useContext(NavStateContext);
 
   return (
     <div className={Style["container"]}>
       {!showMessages ? (
-        <div >
-          <PersonMessage  name="احمد" date="10/10/2020" />
-          <PersonMessage name="aksjd" date="10/10/2020" />
-          <PersonMessage name="asdklajsdlk" date="10/10/2020" />
-        </div>
+        data.map(({ name, date, id }, index) => (
+          <PersonMessage
+            currantMessageId={() => setCurrantMessages(data[index])}
+            key={id}
+            name={name}
+            date={date}
+          />
+        ))
       ) : (
-        <SMC />
+        <SMC data={currantMessages} />
       )}
     </div>
   );

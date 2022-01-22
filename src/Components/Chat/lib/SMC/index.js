@@ -4,49 +4,11 @@ import { AiOutlineSend } from "react-icons/ai";
 import { MdPermMedia } from "react-icons/md";
 import { Button, Stack } from "react-bootstrap";
 import MBody from "./MBody";
-import PersonMessage from "../PersonMessage";
-function SMC() {
+function SMC({data}) {
   return (
     <Stack className="body_message overflow-auto border p-2 border-1 border-light solid ">
-      <div>
-        {/* <PersonMessage name="ahmed"/> */}
-      </div>
       <div className="tstt">
-        <MBody text="ahmed ahm,wed" />
-        <MBody text="ahmed ahm,wed" />
-        <MBody text="ahmed ahm,wed" />
-        <MBody text="ahmed ahm,wed" />
-        <MBody text="ahmed ahm,wed" />
-        <MBody text="ahmed ahm,wed" />
-        <MBody text="ahmed ahm,wed" />
-        <MBody text="ahmed ahm,wed" />
-        <MBody text="ahmed ahm,wed" />
-        <MBody text="ahmed ahm,wed" />
-        <MBody text="ahmed ahm,wed" />
-        <MBody text="ahmed ahm,wed" />
-        <MBody text="ahmed ahm,wed" />
-        <MBody text="ahmed ahm,wed" />
-        <MBody text="ahmed ahm,wed" />
-        <MBody text="ahmed ahm,wed" />
-        <MBody text="ahmed ahm,wed" />
-        <MBody text="ahmed ahm,wed" />
-        <MBody text="ahmed ahm,wed" />
-        <MBody text="ahmed ahm,wed" />
-        <MBody text="ahmed ahm,wed" />
-        <MBody text="ahmed ahm,wed" />
-        <MBody text="ahmed ahm,wed" />
-        <MBody text="ahmed ahm,wed" />
-        <MBody text="ahmed ahm,wed" />
-        <MBody text="ahmed ahm,wed" />
-        <MBody text="ahmed ahm,wed" />
-        <MBody text="ahmed ahm,wed" />
-        <MBody text="ahmed ahm,wed" />
-        <MBody text="ahmed ahm,wed" />
-        <MBody text="ahmed ahm,wed" />
-        <MBody text="ahmed ahm,wed" />
-        <MBody text="ahmed ahm,wed" />
-        <MBody text="ahmed ahm,wed" />
-        <MBody text="ahmed ahm,wed" />
+        <MBody data={data} />
       </div>
       <div className="text_body w-100 d-flex mt-2">
         <Button variant="outline-light">

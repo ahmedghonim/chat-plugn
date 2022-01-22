@@ -20,11 +20,16 @@ const ResquestMessage = ({ text }) => {
   );
 };
 
-function MBody({ text, from }) {
+function MBody({ data }) {
   return (
     <div className="mbody_container py-3 ">
-      <ResponsMessage text={text} />
-      <ResquestMessage text={text} />
+      {data.messages.map(({ req, res }) => (
+        <>
+        {req&&<ResponsMessage text={req} />} 
+        {res&&<ResquestMessage text={res} />} 
+          
+        </>
+      ))}
     </div>
   );
 }
