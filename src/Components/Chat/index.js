@@ -14,7 +14,7 @@ function CustomToggle({ eventKey }) {
   const decoratedOnClick = useAccordionButton(eventKey, () =>
     setArrowState(!arrowState)
   );
-
+console.log(showMassageWindow);
   useEffect(() => {
     if (showMassageWindow && !arrowState) {
       decoratedOnClick();
@@ -28,6 +28,7 @@ function CustomToggle({ eventKey }) {
 }
 
 export default function Chat() {
+  
   const data = [
     {
       id: "1",
@@ -112,7 +113,7 @@ export default function Chat() {
       ],
     },
     {
-      id: "5",
+      id: "13",
       name: "علي",
       date: "1/22",
       messages: [
@@ -173,11 +174,11 @@ export default function Chat() {
       ],
     },
   ];
-
+ 
   return (
     <NavStateProvider>
       <div className="chat">
-        <Accordion>
+        <Accordion alwaysOpen>
           <Card>
             <Card.Header>
               <CustomToggle eventKey="0" />

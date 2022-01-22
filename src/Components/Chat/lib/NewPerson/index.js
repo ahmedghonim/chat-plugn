@@ -2,16 +2,15 @@ import "./styles.scss";
 import { BsFillPersonFill } from "react-icons/bs";
 import { useContext } from "react";
 import { NavStateContext } from "../../Context";
-const NewPerson = ({ img, name, subName, isFollow = true }) => {
-  const { setShowMessages, setShowMassageWindow } =
+const NewPerson = ({ currantMessageId,img, name, subName, isFollow = true }) => {
+  const {setShowMessages } =
     useContext(NavStateContext);
-
   return (
     <div
-      onClick={() => {
-        setShowMessages(true);
-        setShowMassageWindow(true);
-      }}
+    onClick={() => {
+      // setShowMessages(true);
+      currantMessageId();
+    }}
       className="new_personal_message_container "
     >
       <div className="img-info ">

@@ -24,7 +24,7 @@ const NavChat = ({ arrowState, decoratedOnClick }) => {
         {!showMessages ? (
           <>
             <div className="envelope">
-              <ModelMessages />
+              <ModelMessages  />
             </div>
             <Button
               variant="outline-light"
@@ -35,13 +35,22 @@ const NavChat = ({ arrowState, decoratedOnClick }) => {
             </Button>
           </>
         ) : (
-          <Button
-            variant="outline-light"
-            onClick={() => setShowMessages(!showMessages)}
-            className={Styles["arrow"]}
-          >
-            <MdOutlineKeyboardBackspace />
-          </Button>
+          <>
+            <Button
+              variant="outline-light"
+              onClick={() => setShowMessages(!showMessages)}
+              className={Styles["arrow"]}
+            >
+              <MdOutlineKeyboardBackspace />
+            </Button>
+            <Button
+              variant="outline-light"
+              onClick={decoratedOnClick}
+              className={Styles["arrow"]}
+            >
+              {!arrowState ? <IoIosArrowUp /> : <IoIosArrowDown />}
+            </Button>
+          </>
         )}
       </div>
     </div>

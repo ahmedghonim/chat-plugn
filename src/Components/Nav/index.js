@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import "./styles.scss";
-const NavBar = () => {
+const NavBar = (props) => {
+
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Collapse id="responsive-navbar-nav" >
+        <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
             <NavLink to="/">
               <Nav.Link href="/">الرئيسية</Nav.Link>
@@ -22,6 +23,7 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Brand href="/home">الشعار</Navbar.Brand>
       </Container>
+    
     </Navbar>
   );
 };
