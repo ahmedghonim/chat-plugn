@@ -1,3 +1,5 @@
+@import '../../config.scss';
+
 .chat-page  {
 min-height: 90vh;
 height: 90vh;
@@ -8,6 +10,11 @@ overflow: auto;
 overflow-y: auto;
 }
 .chat-page_message{
-  height: 89%;
+  height: 85%;
 }
+}
+@media (max-width:$sm){
+  .sm-disable{
+    display: none;
+  }
 }

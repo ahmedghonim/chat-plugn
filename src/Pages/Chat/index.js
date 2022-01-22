@@ -1,12 +1,14 @@
 import "./styles.scss";
 import React, { useContext, useState } from "react";
-import { Col, Row } from "react-bootstrap";
+import { Button, Col, Row } from "react-bootstrap";
 import SMC from "../../Components/Chat/lib/SMC";
 import { NavStateProvider } from "../../Components/Chat/Context";
 import PersonMessage from "../../Components/Chat/lib/PersonMessage";
+import { MdOutlineKeyboardBackspace } from "react-icons/md";
 
 function Chat() {
   const [currantMessages, setCurrantMessages] = useState();
+  const [toggleWindow, setToggleWindow] = useState(false);
   const data = [
     {
       id: "1",
@@ -140,19 +142,32 @@ function Chat() {
       <Row className="chat-page">
         <Col
           md={4}
-          className="chat-page_persons bg-black d-sm-block d-none mt-4 ps-3"
+          className={
+            toggleWindow ? "sm-disable" : "chat-page_persons bg-black mt-4 ps-3"
+          }
         >
           {data.map(({ name, date, id }, index) => (
             <PersonMessage
-              currantMessageId={() => setCurrantMessages(data[index])}
+              currantMessageId={() => {
+                setCurrantMessages(data[index]);
+                setToggleWindow(!toggleWindow);
+              }}
               key={id}
               name={name}
               date={date}
             />
           ))}
         </Col>
-        <Col md={8} className="chat-page_message py-2">
-          <PersonMessage name={currantMessages?currantMessages.name:""} />
+        <Col md={8} className={!toggleWindow ? "sm-disable":"chat-page_message"}>
+          <div className="d-flex justify-content-between align-items-baseline mt-3">
+            <PersonMessage name={currantMessages ? currantMessages.name : ""} />
+            <Button
+              variant="outline-light"
+              onClick={() => setToggleWindow(false)}
+            >
+              <MdOutlineKeyboardBackspace />
+            </Button>
+          </div>
           <SMC data={currantMessages} />
         </Col>
       </Row>

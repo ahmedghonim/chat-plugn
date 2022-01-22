@@ -6,7 +6,7 @@ const NavBar = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Collapse id="responsive-navbar-nav">
+        <Navbar.Collapse id="responsive-navbar-nav" >
           <Nav className="ms-auto">
             <NavLink to="/">
               <Nav.Link href="/">الرئيسية</Nav.Link>
@@ -20,7 +20,7 @@ const NavBar = () => {
           </Nav>
         </Navbar.Collapse>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Brand href="#home">الشعار</Navbar.Brand>
+        <Navbar.Brand href="/home">الشعار</Navbar.Brand>
       </Container>
     </Navbar>
   );

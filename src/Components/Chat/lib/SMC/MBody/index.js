@@ -1,12 +1,12 @@
 import React from "react";
 import "./styles.scss";
 
-const ResponsMessage = ({ text, img }) => {
+const ResponsMessage = ({ text, img,name }) => {
   return (
     <div className="res-message mb-2">
       <div className="text_container">{text}</div>
       <div className="img_container">
-        {img ? <img src={img} alt="pic img" /> : <span>A</span>}
+        {img ? <img src={img} alt="pic img" /> : <span>{name[0]}</span>}
       </div>
     </div>
   );
@@ -25,7 +25,7 @@ function MBody({ data }) {
     <div className="mbody_container py-3 ">
       {data.messages.map(({ req, res }) => (
         <>
-        {req&&<ResponsMessage text={req} />} 
+        {req&&<ResponsMessage text={req}  name={data.name}/>} 
         {res&&<ResquestMessage text={res} />} 
           
         </>
