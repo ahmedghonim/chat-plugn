@@ -5,10 +5,10 @@ import { Container, Row, Stack } from "react-bootstrap";
 import "./styles.scss";
 export const MainLayout = ({ children }) => {
   return (
-    <Stack className="bg-black vh-100">
+    <Stack className="h-100 min-vh-100 min-vh-100 bg-black ">
       <NavBar />
-      <Container className="main-layout_container h-100 ">
-        <Row className="h-100"> {children} </Row>
+      <Container className="main-layout_container  h-100 ">
+        <Row className="h-100 bg-black "> {children} </Row>
       </Container>
     </Stack>
   );

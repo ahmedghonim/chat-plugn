@@ -1,5 +1,13 @@
-.chat-page{
-  
-  height: 100%;
-   
+.chat-page  {
+min-height: 90vh;
+height: 90vh;
+margin: auto;
+overflow: auto;
+.chat-page_persons{
+  height: 95%;
+overflow-y: auto;
+}
+.chat-page_message{
+  height: 89%;
+}
 }

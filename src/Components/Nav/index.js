@@ -6,8 +6,6 @@ const NavBar = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-       
-        
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
             <NavLink to="/">

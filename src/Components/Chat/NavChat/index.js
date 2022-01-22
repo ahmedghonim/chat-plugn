@@ -6,14 +6,15 @@ import { Button } from "react-bootstrap";
 import { NavStateContext } from "../Context";
 import { MdOutlineKeyboardBackspace } from "react-icons/md";
 
-const NavChat = ({ arrowState, decoratedOnClick }) => {
+const NavChat = ({name,arrowState, decoratedOnClick }) => {
   const { showMessages, setShowMessages } = useContext(NavStateContext);
 
   return (
     <div className={Styles["container"]}>
       <div onClick={decoratedOnClick} className={Styles["text"]}>
-        <span>الرسائل</span>
+      {!showMessages ? <span>الرسائل</span> : <span>{name}</span>}
       </div>
+
       <div className={Styles["icons"]}>
         {!showMessages ? (
           <>
