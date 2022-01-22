@@ -9,16 +9,22 @@ const BoydChat = ({ data }) => {
     useContext(NavStateContext);
 
   return (
-    <div className={Style["container"]}>
+    <div>
       {!showMessages ? (
-        data.map(({ name, date, id }, index) => (
-          <PersonMessage
-            currantMessageId={() => setCurrantMessages(data[index])}
-            key={id}
-            name={name}
-            date={date}
-          />
-        ))
+        data.length ? (
+          data.map(({ name, date, id }, index) => (
+            <PersonMessage
+              currantMessageId={() => setCurrantMessages(data[index])}
+              key={id}
+              name={name}
+              date={date}
+            />
+          ))
+        ) : (
+          <div className="m-auto pt-5 text-center text-white">
+            <h2>لا توجد رسائل</h2>
+          </div>
+        )
       ) : (
         <SMC data={currantMessages} />
       )}

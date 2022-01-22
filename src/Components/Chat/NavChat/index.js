@@ -9,11 +9,15 @@ import { MdOutlineKeyboardBackspace } from "react-icons/md";
 const NavChat = ({ arrowState, decoratedOnClick }) => {
   const { showMessages, setShowMessages, currantMessages } =
     useContext(NavStateContext);
-  const { name } = currantMessages;
+
   return (
     <div className={Styles["container"]}>
       <div onClick={decoratedOnClick} className={Styles["text"]}>
-        {!showMessages ? <span>الرسائل</span> : <span>{name}</span>}
+        {!showMessages ? (
+          <span>الرسائل</span>
+        ) : (
+          <span>{currantMessages.name}</span>
+        )}
       </div>
 
       <div className={Styles["icons"]}>
