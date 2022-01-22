@@ -5,6 +5,7 @@ import SMC from "../../Components/Chat/lib/SMC";
 import { NavStateProvider } from "../../Components/Chat/Context";
 import PersonMessage from "../../Components/Chat/lib/PersonMessage";
 import { MdOutlineKeyboardBackspace } from "react-icons/md";
+import ModelMessages from "../../Components/Chat/lib/Model";
 
 function Chat() {
   const [currantMessages, setCurrantMessages] = useState();
@@ -123,19 +124,7 @@ function Chat() {
         { req: "", res: "رساله جديده من المرسل من فرد " },
       ],
     },
-    {
-      id: "8",
-      name: " عبد الله ",
-      date: "1/22",
-      messages: [
-        { req: "السلامعبد الله كم", res: "عبد الله كم السلام" },
-        { req: "رساله جديده من المرسلعبد الله ", res: "اليوزر يرسل مره اخر" },
-        { req: "رساله جديده من المرسل من فردعبد الله  ", res: "" },
-        { req: "عبد الله  رساله جديده من المرسل من فرد  ", res: "" },
-        { req: "رساله جديده من المرسل من فرد  ", res: "" },
-        { req: "", res: "رساله جديده من المرسل من فرد " },
-      ],
-    },
+   
   ];
   return (
     <NavStateProvider>
@@ -143,7 +132,7 @@ function Chat() {
         <Col
           md={4}
           className={
-            toggleWindow ? "sm-disable" : "chat-page_persons bg-black mt-4 ps-3"
+            toggleWindow ? "sm-disable chat-page_persons bg-black mt-4 ps-3" : "chat-page_persons bg-black mt-4 ps-3"
           }
         >
           {data.map(({ name, date, id }, index) => (
@@ -158,9 +147,10 @@ function Chat() {
             />
           ))}
         </Col>
-        <Col md={8} className={!toggleWindow ? "sm-disable":"chat-page_message"}>
+        <Col md={8} className={!toggleWindow ? "sm-disable chat-page_message":"chat-page_message"}>
           <div className="d-flex justify-content-between align-items-baseline mt-3">
             <PersonMessage name={currantMessages ? currantMessages.name : ""} />
+            <ModelMessages/>
             <Button
               variant="outline-light"
               onClick={() => setToggleWindow(false)}
