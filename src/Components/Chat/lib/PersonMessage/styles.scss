@@ -1,10 +1,11 @@
-@import "../../../config.scss";
+@import "../../../../config.scss";
 .personal_message_container {
     display: flex;
     color: white;
     justify-content: space-between;
     align-items: center;
-
+    margin-bottom: 20px;
+    cursor: pointer;
     .info {
         display: flex;
         align-items: center;

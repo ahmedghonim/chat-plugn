@@ -1,0 +1,50 @@
+@import "../../../../../config.scss";
+
+.mbody_container {
+    display: flex;
+    flex-direction: column;
+    .res-message {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        
+        .text_container{
+            background-color: $skyBlue;
+            margin-left: 5px;
+            border-radius: 20px;
+            width: auto;
+            padding: 5px 10px;
+        }
+        .img_container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $gray;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+    }
+    .req-message {
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        
+        .text_container{
+            background-color: $gray;
+            margin-left: 5px;
+            border-radius: 20px;
+            width: auto;
+            padding: 5px 10px;
+        }
+        .img_container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $gray;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+    }
+}

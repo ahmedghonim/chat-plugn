@@ -1,0 +1,19 @@
+.smc_container {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    .body {
+        flex-grow: 1;
+        overflow: auto;
+    }
+    .text_body {
+        input {
+            color: white;
+            border: 1px solid white;
+            border-radius: 5px;
+            outline: none !important;
+            &:focus {
+            }
+        }
+    }
+}

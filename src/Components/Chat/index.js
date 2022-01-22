@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Accordion, Card, useAccordionButton } from "react-bootstrap";
+import BoydChat from "./BodyChat";
+import { NavStateProvider } from "./Context";
 import NavChat from "./NavChat";
-import PersonMessage from "./PersonMessage";
 import "./styles.scss";
 function CustomToggle({ eventKey }) {
   const [show, setShow] = useState(false);
@@ -11,20 +12,21 @@ function CustomToggle({ eventKey }) {
 }
 export default function Chat() {
   return (
-    <div className="nav">
-      {/*  */}
-      <Accordion className="nav_header">
-        <Card>
-          <Card.Header>
-            <CustomToggle eventKey="0" />
-          </Card.Header>
-          <Accordion.Collapse eventKey="0">
-            <Card.Body>
-              <PersonMessage name="احمد" date="10/10/2020" />
-            </Card.Body>
-          </Accordion.Collapse>
-        </Card>
-      </Accordion>
-    </div>
+    <NavStateProvider>
+      <div className="chat">
+        <Accordion>
+          <Card>
+            <Card.Header>
+              <CustomToggle eventKey="0" />
+            </Card.Header>
+            <Accordion.Collapse eventKey="0">
+              <Card.Body>
+                <BoydChat />
+              </Card.Body>
+            </Accordion.Collapse>
+          </Card>
+        </Accordion>
+      </div>
+    </NavStateProvider>
   );
 }

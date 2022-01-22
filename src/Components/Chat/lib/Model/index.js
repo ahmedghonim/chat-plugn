@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Button, CloseButton, Col, Modal, Row } from "react-bootstrap";
 import { FaRegEnvelope } from "react-icons/fa";
 import { BiSearch } from "react-icons/bi";
 import "./styles.scss";
 
 import NewPerson from "../NewPerson";
+import { NavStateContext } from "../../Context";
+
+
 function MyVerticallyCenteredModal(props) {
+
+  const { setShowMessages } = useContext(NavStateContext);
+
   return (
     <Modal
       {...props}
@@ -20,7 +26,7 @@ function MyVerticallyCenteredModal(props) {
             <h6>رسالة جديدة</h6>
           </div>
           <div>
-            <Button variant="light">التالي</Button>
+            <Button onClick={()=>setShowMessages(true)} variant="light">التالي</Button>
           </div>
         </div>
       </Modal.Header>

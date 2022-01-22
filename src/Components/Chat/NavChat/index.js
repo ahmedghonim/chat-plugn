@@ -1,25 +1,42 @@
-import React from "react";
+import React, { useContext } from "react";
 import Styles from "./styles.module.scss";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
-import ModelMessages from "../Model";
+import ModelMessages from "../lib/Model";
 import { Button } from "react-bootstrap";
+import { NavStateContext } from "../Context";
+import { MdOutlineKeyboardBackspace } from "react-icons/md";
+
 const NavChat = ({ show, decoratedOnClick }) => {
+  const { showMessages, setShowMessages } = useContext(NavStateContext);
+
   return (
     <div className={Styles["container"]}>
       <div onClick={decoratedOnClick} className={Styles["text"]}>
         <span>الرسائل</span>
       </div>
       <div className={Styles["icons"]}>
-        <div className="envelope">
-          <ModelMessages />
-        </div>
-        <Button
-          variant="outline-light"
-          onClick={decoratedOnClick}
-          className={Styles["arrow"]}
-        >
-          {!show ? <IoIosArrowUp /> : <IoIosArrowDown />}
-        </Button>
+        {!showMessages ? (
+          <>
+            <div className="envelope">
+              <ModelMessages />
+            </div>
+            <Button
+              variant="outline-light"
+              onClick={decoratedOnClick}
+              className={Styles["arrow"]}
+            >
+              {!show ? <IoIosArrowUp /> : <IoIosArrowDown />}
+            </Button>
+          </>
+        ) : (
+          <Button
+            variant="outline-light"
+            onClick={()=>setShowMessages(!showMessages)}
+            className={Styles["arrow"]}
+          >
+           <MdOutlineKeyboardBackspace />  
+          </Button>
+        )}
       </div>
     </div>
   );

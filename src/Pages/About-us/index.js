@@ -1,7 +1,12 @@
-import React from 'react';
+import React from "react";
+import Chat from "../../Components/Chat";
 
 function AboutUs() {
-  return <div>Abbbout</div>;
+  return (
+    <div>
+      <Chat />
+    </div>
+  );
 }
 
 export default AboutUs;

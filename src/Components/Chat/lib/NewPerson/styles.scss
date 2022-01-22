@@ -1,9 +1,10 @@
-@import "../../../config.scss";
+@import "../../../../config.scss";
 .new_personal_message_container {
     display: flex;
     color: white;
     align-items: flex-end;
     margin-bottom: 10px;
+    cursor: pointer;
     .follow {
         margin-right: 10px;
         margin-bottom: 5px;

@@ -1,17 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
+import SMC from "../lib/SMC";
 import Style from "./styles.module.scss";
+import PersonMessage from "../lib/PersonMessage";
+import { NavStateContext } from "../Context";
 
-const BoyChat = () => {
+const BoydChat = () => {
+  const { showMessages } = useContext(NavStateContext);
+
   return (
     <div className={Style["container"]}>
-      <h1>test</h1>
-      <h1>test</h1>
-         <h1>test</h1>
- 
- 
-      <h1>test</h1>
+      {!showMessages ? (
+        <div >
+          <PersonMessage  name="احمد" date="10/10/2020" />
+          <PersonMessage name="aksjd" date="10/10/2020" />
+          <PersonMessage name="asdklajsdlk" date="10/10/2020" />
+        </div>
+      ) : (
+        <SMC />
+      )}
     </div>
   );
 };
 
-export default BoyChat;
+export default BoydChat;
