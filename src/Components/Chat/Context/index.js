@@ -5,6 +5,7 @@ const NavStateProvider = ({ children }) => {
   const [showMessages, setShowMessages] = useState(false);
   const [showMassageWindow, setShowMassageWindow] = useState(false);
   const [currantMessages, setCurrantMessages] = useState();
+  
   const value = {
     showMessages,
     setShowMessages,
