@@ -21,7 +21,7 @@ function CustomToggle({ eventKey }) {
       decoratedOnClick();
       setShowMassageWindow(false);
     }
-  }, [showMassageWindow, arrowState]);
+  }, [showMassageWindow,arrowState]);
 
   return (
     <NavChat arrowState={arrowState} decoratedOnClick={decoratedOnClick} />
