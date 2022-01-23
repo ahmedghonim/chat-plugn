@@ -10,7 +10,7 @@ export const MainLayout = ({ children }) => {
   return (
     <Stack className="h-100 min-vh-100 min-vh-100 bg-black ">
       <NavBar />
-      <Container className="main-layout_container  h-100 ">
+      <Container className="main-layout_container  h-100 mb-5 pb-5">
         <Row className="h-100 bg-black "> {children} </Row>
       </Container>
       {location.pathname != "/chat" && <Chat />}
