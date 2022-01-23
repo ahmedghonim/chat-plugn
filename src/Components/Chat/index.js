@@ -16,6 +16,7 @@ function CustomToggle({ eventKey }) {
   );
   
   useEffect(() => {
+    //chow massage window by the popup module 
     if (showMassageWindow && !arrowState) {
       decoratedOnClick();
       setShowMassageWindow(false);
@@ -40,7 +41,7 @@ export default function Chat() {
         { req: "رساله جديده من المرسل من فرد  ", res: "" },
         { req: "رساله جديده من المرسل من فرد  ", res: "" },
         { req: "رساله جديده من المرسل من فرد  ", res: "" },
-        { req: "", res: "رساله جديده من المرسل من فرد " },
+        { req: "01098050012", res: "الارقام تعمل جيدا " },
       ],
     },
     {

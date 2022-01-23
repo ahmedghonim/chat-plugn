@@ -8,8 +8,12 @@ import { MdOutlineKeyboardBackspace } from "react-icons/md";
 import ModelMessages from "../../Components/Chat/lib/Model";
 
 function Chat() {
+  // send select data to chat box 
   const [currantMessages, setCurrantMessages] = useState();
+  //this state for active class in mobile dvice
   const [toggleWindow, setToggleWindow] = useState(false);
+  
+  //test data accses only in chat page 
   const data = [
     {
       id: "1",
@@ -22,7 +26,7 @@ function Chat() {
         { req: "رساله جديده من المرسل من فرد  ", res: "" },
         { req: "رساله جديده من المرسل من فرد  ", res: "" },
         { req: "رساله جديده من المرسل من فرد  ", res: "" },
-        { req: "", res: "رساله جديده من المرسل من فرد " },
+        { req: "01098050012", res: "الارقام تعمل جيدا " },
       ],
     },
     {
@@ -161,7 +165,7 @@ function Chat() {
               />
             </Col>
             <Col  className="d-flex align-items-baseline justify-content-center">
-              <ModelMessages />
+              {/* <ModelMessages /> */}
             </Col>
             <Col   className="d-flex align-items-baseline justify-content-end">
               <Button
